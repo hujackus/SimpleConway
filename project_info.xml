@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ProjectSettings>
+  <Name value="SimpleConway"/>
+  <Version value="1.0.6"/>
+  <Description value=""/>
+  <BundleIdentifier value="com.hujackus.conway"/>
+  <PluginCode value="Cnwy"/>
+  <EmbedAudioFiles value="Yes"/>
+  <EmbedImageFiles value="Yes"/>
+  <SupportFullDynamicsHLAC value="No"/>
+  <AdditionalDspLibraries value=""/>
+  <OSXStaticLibs value=""/>
+  <WindowsStaticLibFolder value=""/>
+  <ExtraDefinitionsWindows value="JucePlugin_ProducesMidiOutput=1"/>
+  <ExtraDefinitionsOSX value=""/>
+  <ExtraDefinitionsIOS value=""/>
+  <ExtraDefinitionsLinux value=""/>
+  <ExtraDefinitionsNetworkDll value=""/>
+  <AppGroupID value=""/>
+  <RedirectSampleFolder value=""/>
+  <AAXCategoryFX value="AAX_EPlugInCategory_Effect"/>
+  <VST3Category value="Generator"/>
+  <SupportMonoFX value="No"/>
+  <EnableMidiInputFX value="No"/>
+  <EnableMidiOut value="1"/>
+  <EnableSoundGeneratorsFX value="No"/>
+  <VST3Support value="1"/>
+  <UseRawFrontend value="0"/>
+  <ExpansionType value="Disabled"/>
+  <EncryptionKey value=""/>
+  <LinkExpansionsToProject value="No"/>
+  <ReadOnlyFactoryPresets value="No"/>
+  <ForceStereoOutput value="No"/>
+  <AdminPermissions value="No"/>
+  <EmbedUserPresets value="Yes"/>
+  <OverwriteOldUserPresets value="No"/>
+  <EnableGlobalPreprocessor value="No"/>
+  <UseGlobalAppDataFolderWindows value="No"/>
+  <UseGlobalAppDataFolderMacOS value="No"/>
+  <DefaultUserPreset value=""/>
+  <CompileWithPerfetto value="0"/>
+  <CompileWithDebugSymbols value="No"/>
+  <IncludeLorisInFrontend value="No"/>
+  <ProjectType value="Instrument"/>
+</ProjectSettings>

@@ -18,11 +18,10 @@
             <Control type="ScriptButton" id="btnStart" value="0.0"/>
             <Control type="ScriptButton" id="btnStep" value="0.0"/>
             <Control type="ScriptSlider" id="BPMKnob" value="60.0"/>
-            <Control type="ScriptComboBox" id="RuleCB" value="1.0"/>
-            <Control type="ScriptButton" id="btnSettings" value="0.0"/>
+            <Control type="ScriptComboBox" id="cbRule" value="1.0"/>
             <Control type="ScriptComboBox" id="cbOutput" value="1.0"/>
-            <Control type="ScriptSliderPack" id="VelSlider" value="1.0" data="64.lbvYBA..zID..PmP...cBA..zIT.YrlPgk9ZBEbtrIDHJ1lP9okaB4sJuIjO6+lPbtLbBw+lwIzVrImP6xybBA"/>
-            <Control type="ScriptSliderPack" id="PanSlider" value="0.0" data="64.lYlY+1YdQ8KDJHyu.poD+NdUl6qw1cpuZ8RT9Ni3l1KfzjROZs.J9nL4R5i4CGsOBFEB+.Qvm7ymvbzOs.pY+."/>
+            <Control type="ScriptSliderPack" id="VelSlider" value="-1.0" data="64.GY3eB8Gm.Jz10EnP27jfBMIJCJj6APnPJsMgBYJsEJj.NZnPcc1gBkKPHJTEZjnPwMehBwLyJJDJltnPD9GiBA"/>
+            <Control type="ScriptSliderPack" id="PanSlider" value="11.0" data="64.ZsDU+1.w47Kv77wuyUKA+BEWT6auM8ouF4GU9NivT2ayLeXtMJ6z8Lm8S4CzI7oOngA0972jD7yxZ7wOWHZN+."/>
             <Control type="ScriptSliderPack" id="OctaveSlider" value="0.0" data="4....P.A"/>
             <Control type="ScriptButton" id="btnColorBox" value="0.0"/>
             <Control type="ScriptSlider" id="GreenKnob" value="255.0"/>
@@ -31,6 +30,7 @@
             <Control type="ScriptSlider" id="SatKnob" value="1.0"/>
             <Control type="ScriptButton" id="btnKeyboardShow" value="1.0"/>
             <Control type="ScriptButton" id="btnColorSelectShow" value="0.0"/>
+            <Control type="ScriptButton" id="btnSettingsShow" value="0.0"/>
           </Content>
           <UIData Source="SimpleConwayUIData"/>
         </Processor>
@@ -239,19 +239,19 @@
     <Controller Controller="22" Channel="-1" Processor="Interface" MacroIndex="-1"
                 Start="10.0" End="960.0" FullStart="10.0" FullEnd="960.0" Skew="0.3214995779718415"
                 Interval="0.01" Converter="37.nT6K8CBGgC..VEFa0U1Pu4lckIGckIG.ADPXiQWZ1UF.ADf..."
-                Attribute="btnClear" Inverted="0"/>
+                Attribute="RndPctKnob" Inverted="0"/>
     <Controller Controller="28" Channel="-1" Processor="Interface" MacroIndex="-1"
                 Start="0.0" End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0"
                 Interval="0.01" Converter="70.nT6K8CROoG..VEFa0U1Pu4lckIGckIG.AHPXiQWZ1UF.ADf.lUmaiQWZu4F.AXQAN8lbsEFaooWYjAUYxMVYtQWXmUF..."
-                Attribute="btnUpdate" Inverted="0"/>
+                Attribute="btnClear" Inverted="0"/>
     <Controller Controller="108" Channel="-1" Processor="Interface" MacroIndex="-1"
                 Start="0.0" End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0"
                 Interval="1.0" Converter="53.nT6K8CBKgE..VEFa0U1Pu4lckIGckIG.AHPZzUVayAP.HTvSlYlBO4F.gMFcoYWY.DP.B.."
-                Attribute="btnLoad" Inverted="0"/>
+                Attribute="pnlButtons" Inverted="0"/>
     <Controller Controller="109" Channel="-1" Processor="Interface" MacroIndex="-1"
                 Start="0.0" End="1.0" FullStart="0.0" FullEnd="1.0" Skew="1.0"
                 Interval="1.0" Converter="53.nT6K8CBKgE..VEFa0U1Pu4lckIGckIG.AHPZzUVayAP.HTvSlYlBO4F.gMFcoYWY.DP.B.."
-                Attribute="btnSave" Inverted="0"/>
+                Attribute="btnLoad" Inverted="0"/>
   </MidiAutomation>
   <MPEData Enabled="0"/>
 </Processor>

@@ -18,7 +18,7 @@ along with this program.  If not, see https://www.gnu.org/licenses/.
 **/
 
 Console.clear();
-Content.makeFrontInterface(550, 550);
+Content.makeFrontInterface(560, 560);
 Content.getComponent("Version").set("text", (Engine.isPlugin()?"VST":"SA")+" Ver "+Engine.getVersion());
 
 namespace MainSettings
@@ -27,7 +27,7 @@ namespace MainSettings
 	{
 		Content.getComponent("pnlSettings").set("visible",value);
 	};
-	Content.getComponent("btnSettings").setControlCallback(onbtnSettingsControl);
+	Content.getComponent("btnSettingsShow").setControlCallback(onbtnSettingsControl);
 }
 
 
@@ -322,7 +322,7 @@ function onNoteOn()
 
 
 	//Console.print("timer running "+timeTick + " utick="+ utick);
-	local r	= Content.getComponent("RuleCB").getValue();
+	local r	= Content.getComponent("cbRule").getValue();
 
 	if(utick==0){
 		var newValue;

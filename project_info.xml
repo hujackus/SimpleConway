@@ -2,7 +2,7 @@
 
 <ProjectSettings>
   <Name value="SimpleConway"/>
-  <Version value="1.0.7"/>
+  <Version value="1.0.8"/>
   <Description value=""/>
   <BundleIdentifier value="com.hujackus.conway"/>
   <PluginCode value="Cnwy"/>

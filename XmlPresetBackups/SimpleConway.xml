@@ -14,12 +14,13 @@
             <Control type="ScriptButton" id="btnRandom" value="0.0"/>
             <Control type="ScriptSlider" id="RndPctKnob" value="0.2099999934434891"/>
             <Control type="ScriptButton" id="btnClear" value="0.0"/>
-            <Control type="ScriptButton" id="btnUpdate" value="1.0"/>
+            <Control type="ScriptButton" id="btnUpdate" value="0.0"/>
             <Control type="ScriptButton" id="btnStart" value="0.0"/>
             <Control type="ScriptButton" id="btnStep" value="0.0"/>
             <Control type="ScriptSlider" id="BPMKnob" value="60.0"/>
             <Control type="ScriptComboBox" id="cbRule" value="1.0"/>
             <Control type="ScriptComboBox" id="cbOutput" value="1.0"/>
+            <Control type="ScriptedViewport" id="EditorViewport" value="0.0"/>
             <Control type="ScriptSliderPack" id="VelSlider" value="-1.0" data="64.GY3eB8Gm.Jz10EnP27jfBMIJCJj6APnPJsMgBYJsEJj.NZnPcc1gBkKPHJTEZjnPwMehBwLyJJDJltnPD9GiBA"/>
             <Control type="ScriptSliderPack" id="PanSlider" value="11.0" data="64.ZsDU+1.w47Kv77wuyUKA+BEWT6auM8ouF4GU9NivT2ayLeXtMJ6z8Lm8S4CzI7oOngA0972jD7yxZ7wOWHZN+."/>
             <Control type="ScriptSliderPack" id="OctaveSlider" value="0.0" data="4....P.A"/>
@@ -30,7 +31,10 @@
             <Control type="ScriptSlider" id="SatKnob" value="1.0"/>
             <Control type="ScriptButton" id="btnKeyboardShow" value="1.0"/>
             <Control type="ScriptButton" id="btnColorSelectShow" value="0.0"/>
-            <Control type="ScriptButton" id="btnSettingsShow" value="0.0"/>
+            <Control type="ScriptButton" id="btnCommandShow" value="0.0"/>
+            <Control type="ScriptButton" id="btnEditorShow" value="0"/>
+            <Control type="ScriptButton" id="btnSettingsShow" value="0"/>
+            <Control type="ScriptButton" id="btnGridShow" value="1.0"/>
           </Content>
           <UIData Source="SimpleConwayUIData"/>
         </Processor>

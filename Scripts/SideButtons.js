@@ -109,4 +109,10 @@ namespace SideButtons
 	};
 	Content.getComponent("btnColorSelectShow").setControlCallback(onbtnColorSelectShowControl);	
 	
+	inline function onbtnCommandShowControl(component, value)
+	{
+		Content.getComponent("pnlCommand").set("visible",value);
+	};
+	Content.getComponent("btnCommandShow").setControlCallback(onbtnCommandShowControl);	
+	
 }

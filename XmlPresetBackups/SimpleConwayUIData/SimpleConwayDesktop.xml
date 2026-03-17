@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ContentProperties DeviceType="Desktop">
-  <Component type="ScriptLabel" id="Version" x="0" y="545" text="SA Ver 1.0.7"
+  <Component type="ScriptLabel" id="Version" x="0" y="545" text="SA Ver 1.0.8"
              width="70" height="10" alignment="left" editable="0" fontName="Default"
              textColour="1543503871"/>
   <Component type="ScriptPanel" id="pnlCells" x="155" y="5" width="400" height="400"
@@ -38,6 +38,18 @@
     <Component type="ScriptComboBox" id="cbOutput" x="0" y="230" max="4" text="Ouput"
                items="Synth1&#10;Synth2&#10;Midi Out&#10;None" popupAlignment="top"
                defaultValue="2.0" height="28" parentComponent="pnlButtons" width="125"/>
+  </Component>
+  <Component type="ScriptPanel" id="pnlEditor" x="155" y="5" width="400" height="400"
+             text="Editor" bgColour="4294901760" itemColour="3707764736" itemColour2="3707764736"
+             textColour="4281479730" borderRadius="0.0" visible="0.0">
+    <Component type="ScriptedViewport" id="EditorViewport" x="0" y="2" parentComponent="pnlEditor"
+               viewPositionX="1.0" width="400" height="396" viewPositionY="0.1866619618913197">
+      <Component type="ScriptLabel" id="lblEditorText" x="-178" y="-529" width="384"
+                 height="3230" parentComponent="EditorViewport" alignment="topLeft"
+                 multiline="1" bgColour="65280" itemColour="16711680" itemColour2="4278255615"
+                 text="Button01 Load0 0-2 &quot;Load&quot;&#10;Button02 Save0 5-7 &quot;Save&quot;&#10;Button03 Rand 10-12 &quot;Random&quot;&#10;Button04 Clear 15-17 &quot;Clear&quot;&#10;Button05 Update 20-22 &quot;Update&quot;&#10;Button06 Start 25-26 &quot;Start/Stop&quot;&#10;Button07 Step 27-28 &quot;Step&quot;&#10;Button08&#10;Button09&#10;Button10&#10;Button11&#10;Button12&#10;Button13&#10;Button14&#10;Button15&#10;Button16&#10;Button17&#10;Button18&#10;Button19&#10;Button20&#10;Button21&#10;Button22&#10;Button23&#10;Button24&#10;Button25&#10;Button26&#10;Button27&#10;Button28&#10;Button29&#10;Button30&#10;Button31&#10;Button32&#10;Knob01&#10;Knob02&#10;Knob03 RandPct 13 &quot;Pct&quot;&#10;Knob04 RandShape 14 &quot;S&quot;&#10;Knob05 BPM 30-39 &quot;BPM&quot;&#10;Knob06&#10;Knob07&#10;Knob08&#10;Knob09&#10;Knob10&#10;Knob11&#10;Knob12&#10;Knob13&#10;Knob14&#10;Knob15&#10;Knob16&#10;Combo01 Rule 40-44&#10;Combo02 Output 45-49&#10;Combo03 Topology 50-54&#10;Combo04 Scale 55-59&#10;Combo05&#10;Input01 UpdateEvery 23-24&#10;Input02 CustomScale 60-64&#10;Input03&#10;Input04&#10;Input05&#10;Input06&#10;Input07&#10;Input08&#10;Input09&#10;Input10&#10;Input11&#10;Input12&#10;Input13&#10;Input14&#10;Input15&#10;Input16&#10;KeyA&#10;KeyB&#10;KeyC clear&#10;KeyD&#10;KeyE&#10;KeyF&#10;KeyG&#10;KeyH&#10;KeyI&#10;KeyJ&#10;KeyK&#10;KeyL load&#10;KeyM mute&#10;KeyN&#10;KeyO&#10;KeyP pause&#10;KeyQ&#10;KeyR random&#10;KeyS save&#10;KeyT&#10;KeyU update&#10;KeyV&#10;KeyW&#10;KeyX&#10;KeyY&#10;KeyZ&#10;Key&#96;&#10;Key1&#10;Key2&#10;Key3&#10;Key4&#10;Key5&#10;Key6&#10;Key7&#10;Key8&#10;Key9&#10;Key0&#10;Key-&#10;Key=&#10;Key[&#10;Key]&#10;Key\&#10;Key,&#10;Key.&#10;Key/&#10;Key;&#10;Key'&#10;Key&#8593;&#10;Key&#8595;&#10;Key&#8592;&#10;Key&#8594;&#10;Note000&#10;Note001&#10;Note002&#10;Note003&#10;Note004&#10;Note005&#10;Note006&#10;Note007&#10;Note008&#10;Note009&#10;Note010&#10;Note011&#10;Note012&#10;Note013&#10;Note014&#10;Note015&#10;Note016&#10;Note017&#10;Note018&#10;Note019&#10;Note020&#10;Note021&#10;Note022&#10;Note023&#10;Note024&#10;Note025&#10;Note026&#10;Note027&#10;Note028&#10;Note029&#10;Note030&#10;Note031&#10;Note032&#10;Note033&#10;Note034&#10;Note035&#10;Note036&#10;Note037&#10;Note038&#10;Note039&#10;Note040&#10;Note041&#10;Note042&#10;Note043&#10;Note044&#10;Note045&#10;Note046&#10;Note047&#10;Note048&#10;Note049&#10;Note050&#10;Note051&#10;Note052&#10;Note053&#10;Note054&#10;Note055&#10;Note056&#10;Note057&#10;Note058&#10;Note059&#10;Note060&#10;Note061&#10;Note062&#10;Note063&#10;Note064&#10;Note065&#10;Note066&#10;Note067&#10;Note068&#10;Note069&#10;Note070&#10;Note071&#10;Note072&#10;Note073&#10;Note074&#10;Note075&#10;Note076&#10;Note077&#10;Note078&#10;Note079&#10;Note080&#10;Note081&#10;Note082&#10;Note083&#10;Note084&#10;Note085&#10;Note086&#10;Note087&#10;Note088&#10;Note089&#10;Note090&#10;Note091&#10;Note092&#10;Note093&#10;Note094&#10;Note095&#10;Note096&#10;Note097&#10;Note098&#10;Note099&#10;Note100&#10;Note101&#10;Note102&#10;Note103&#10;Note104&#10;Note105&#10;Note106&#10;Note107&#10;Note108&#10;Note109&#10;Note110&#10;Note111&#10;Note112&#10;Note113&#10;Note114&#10;Note115&#10;Note116&#10;Note117&#10;Note118&#10;Note119&#10;Note120&#10;Note121&#10;Note122&#10;Note123&#10;Note124&#10;Note125&#10;Note126&#10;Note127"
+                 updateEachKey="1"/>
+    </Component>
   </Component>
   <Component type="ScriptPanel" id="pnlSettings" x="155" y="5" text="Settings"
              width="400" height="400" bgColour="4294901760" itemColour="3707764736"
@@ -99,10 +111,25 @@
                width="12" height="128" bgColour="4281545523" itemColour="4278190080"
                itemColour2="4285295724" parentComponent="pnlColorSelect" locked="1"/>
   </Component>
-  <Component type="ScriptButton" id="btnKeyboardShow" x="5" y="405" width="25"
+  <Component type="ScriptPanel" id="pnlCommand" x="135" y="405" width="420"
+             height="152" bgColour="0" itemColour="0" itemColour2="0" textColour="0"
+             borderRadius="0.0" visible="0.0">
+    <Component type="ScriptLabel" id="lblPrompt" x="20" y="5" width="20" height="25"
+               parentComponent="pnlCommand" text="&gt;:" bgColour="4278190080"
+               alignment="left" editable="0" updateEachKey="1"/>
+    <Component type="ScriptLabel" id="lblCommand" x="35" y="5" width="385" height="25"
+               parentComponent="pnlCommand" text="" alignment="left" bgColour="4278190080"/>
+  </Component>
+  <Component type="ScriptButton" id="btnKeyboardShow" x="5" y="430" width="23"
              height="25" radioGroup="1.0"/>
-  <Component type="ScriptButton" id="btnColorSelectShow" x="32" y="405" width="25"
+  <Component type="ScriptButton" id="btnColorSelectShow" x="30" y="430" width="23"
              radioGroup="1.0" height="25"/>
-  <Component type="ScriptButton" id="btnSettingsShow" x="59" y="405" text="Settings"
-             width="25" height="25"/>
+  <Component type="ScriptButton" id="btnCommandShow" x="55" y="430" width="23"
+             height="25" enableMidiLearn="0" radioGroup="1.0"/>
+  <Component type="ScriptButton" id="btnEditorShow" x="5" y="405" width="23"
+             height="25" enableMidiLearn="0" radioGroup="2.0"/>
+  <Component type="ScriptButton" id="btnSettingsShow" x="30" y="405" text="Settings"
+             width="23" height="25" enableMidiLearn="0" radioGroup="2.0"/>
+  <Component type="ScriptButton" id="btnGridShow" x="55" y="405" width="23"
+             height="25" radioGroup="2.0" enableMidiLearn="0"/>
 </ContentProperties>

@@ -28,6 +28,12 @@ namespace MainSettings
 		Content.getComponent("pnlSettings").set("visible",value);
 	};
 	Content.getComponent("btnSettingsShow").setControlCallback(onbtnSettingsControl);
+	
+	inline function onbtnEditorControl(component, value)
+	{
+		Content.getComponent("pnlEditor").set("visible",value);
+	};
+	Content.getComponent("btnEditorShow").setControlCallback(onbtnEditorControl);
 }
 
 

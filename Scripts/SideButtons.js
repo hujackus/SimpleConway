@@ -95,24 +95,5 @@ namespace SideButtons
 		Grid.pnlCells.repaint();
 	};
 	Content.getComponent("btnClear").setControlCallback(onbtnClearControl);
-
-
-	inline function onbtnKeyboardShowControl(component, value)
-	{
-		Content.getComponent("pnlKeyboard").set("visible",value);
-	};
-	Content.getComponent("btnKeyboardShow").setControlCallback(onbtnKeyboardShowControl);
-	
-	inline function onbtnColorSelectShowControl(component, value)
-	{
-		Content.getComponent("pnlColorSelect").set("visible",value);
-	};
-	Content.getComponent("btnColorSelectShow").setControlCallback(onbtnColorSelectShowControl);	
-	
-	inline function onbtnCommandShowControl(component, value)
-	{
-		Content.getComponent("pnlCommand").set("visible",value);
-	};
-	Content.getComponent("btnCommandShow").setControlCallback(onbtnCommandShowControl);	
 	
 }

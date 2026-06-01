@@ -19,6 +19,7 @@ along with this program.  If not, see https://www.gnu.org/licenses/.
 
 namespace Notes
 {
+	
 	reg notes = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 	reg scale = [4,3,5,0];
 	
@@ -41,19 +42,35 @@ namespace Notes
 		}	
 	}
 	
+	function setScale(array)
+	{
+
+		scale = array;
+		var base = Notes.notes[0];
+		setNotes(base);
+		
+	}
 	
 	function setNotes(base)
 	{
 		for(i=0;i<16;i++){
 			//Engine.setKeyColour(notes[i],0x0);
+			//set keycolor white or black based on note number
 			Engine.setKeyColour(notes[i], (((notes[i]%12)<=4)?(notes[i]%2):((notes[i]-1)%2))?0x88000000:0x0);
 		}
 	
 		var j = 0;
 		for(i=0;i<16;i++){
+			if(notes[i]!=base){
+				if(Output.noteID[i]>=0){
+					Synth.noteOffByEventId(Output.noteID[i]);
+					Console.print("Silenced orphan "+ i);
+					Output.noteID[i] = -1;
+				}
+			}
 			notes[i] = base;
 			base += scale[j];
-			j = (j+1)%4;	
+			j = (j+1)%scale.length;	
 		}
 		for(i=0;i<16;i++){
 			Engine.setKeyColour(notes[i],0x550000ff);	

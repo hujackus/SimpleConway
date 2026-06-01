@@ -23,6 +23,7 @@ namespace Output
 	reg channelOut = 1;
 	reg isMidiOut = false;
 	reg noteID = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+	reg noteIDOrphans = [];
 	
 	const synths = [
 		Synth.getChildSynth("Synth1 Sine Wave Generator"),

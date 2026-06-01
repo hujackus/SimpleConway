@@ -21,30 +21,6 @@ Console.clear();
 Content.makeFrontInterface(560, 560);
 Content.getComponent("Version").set("text", (Engine.isPlugin()?"VST":"SA")+" Ver "+Engine.getVersion());
 
-namespace MainSettings
-{
-	inline function onbtnSettingsControl(component, value)
-	{
-		Content.getComponent("pnlSettings").set("visible",value);
-	};
-	Content.getComponent("btnSettingsShow").setControlCallback(onbtnSettingsControl);
-	
-	inline function onbtnEditorControl(component, value)
-	{
-		Content.getComponent("pnlEditor").set("visible",value);
-	};
-	Content.getComponent("btnEditorShow").setControlCallback(onbtnEditorControl);
-}
-
-
-
-
-
-reg timeTick = 0;
-reg scanPosion = 0; 
-reg updateEvery = 16;
-reg stepEnabled = false;
-
 global velocity =  [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 global pan =  [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 
@@ -102,6 +78,100 @@ global savedCells = [
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 
+include("Paths.js");
+include("Output.js");
+include("Notes.js");
+include("SideButtons.js");
+
+namespace MainSettings
+{
+	const iconButton = Content.createLocalLookAndFeel();
+	iconButton.registerFunction("drawToggleButton", function(g, obj)
+	{
+		var a = [0,0,23,23];
+		g.setColour(obj.bgColour); 
+		g.fillRect(a);
+		g.setColour(obj.itemColour1); 
+		if(obj.over){
+			g.drawRect(a, 1 + 1*obj.down);
+		}
+
+		a = [1,1,21,21];
+		switch(obj.text){
+			case "grid":
+			case "gear":
+			case "code":
+			case "save":
+				a = [2,2,19,19];
+				Console.breakInDebugger();
+			case "piano":
+				a = [2,5,19,13];
+				break;
+		}
+		if(obj.value){
+			g.fillPath(Paths.icons[obj.text+"2"], a);
+		}else{
+			g.fillPath(Paths.icons[obj.text], a);
+		}
+	});
+
+	Content.getComponent("btnGridShow").setLocalLookAndFeel(iconButton);
+	Content.getComponent("btnGridShow").setValue(true);
+	
+	inline function onbtnSettingsControl(component, value)
+	{
+		Content.getComponent("pnlSettings").set("visible",value);
+	};
+	Content.getComponent("btnSettingsShow").setControlCallback(onbtnSettingsControl);
+	Content.getComponent("btnSettingsShow").setLocalLookAndFeel(iconButton);
+	
+	inline function onbtnEditorControl(component, value)
+	{
+		Content.getComponent("pnlEditor").set("visible",value);
+	};
+	Content.getComponent("btnEditorShow").setControlCallback(onbtnEditorControl);
+	Content.getComponent("btnEditorShow").setLocalLookAndFeel(iconButton);
+	
+	inline function onbtnPresetsControl(component, value)
+	{
+		Content.getComponent("pnlPresets").set("visible",value);
+	};
+	Content.getComponent("btnPresetsShow").setControlCallback(onbtnPresetsControl);
+	Content.getComponent("btnPresetsShow").setLocalLookAndFeel(iconButton);
+	
+	inline function onbtnKeyboardShowControl(component, value)
+	{
+		Content.getComponent("pnlKeyboard").set("visible",value);
+	};
+	Content.getComponent("btnKeyboardShow").setControlCallback(onbtnKeyboardShowControl);
+	Content.getComponent("btnKeyboardShow").setLocalLookAndFeel(iconButton);
+	Content.getComponent("btnKeyboardShow").setValue(true);
+	
+	inline function onbtnColorSelectShowControl(component, value)
+	{
+		Content.getComponent("pnlColorSelect").set("visible",value);
+	};
+	Content.getComponent("btnColorSelectShow").setControlCallback(onbtnColorSelectShowControl);	
+	Content.getComponent("btnColorSelectShow").setLocalLookAndFeel(iconButton);
+	
+	inline function onbtnCommandShowControl(component, value)
+	{
+		Content.getComponent("pnlCommand").set("visible",value);
+	};
+	Content.getComponent("btnCommandShow").setControlCallback(onbtnCommandShowControl);	
+	Content.getComponent("btnCommandShow").setLocalLookAndFeel(iconButton);
+}
+
+
+
+
+
+reg timeTick = 0;
+reg scanPosion = 0; 
+reg updateEvery = 16;
+reg stepEnabled = false;
+
+
 namespace Grid
 {
 	const pnlCells = Content.getComponent("pnlCells");
@@ -158,11 +228,29 @@ namespace Grid
 	
 }
 
-include("Output.js");
-include("Notes.js");
-include("SideButtons.js");
+
 
 Notes.initKeyboardColors();
+
+const var lblCustomScale = Content.getComponent("lblCustomScale");
+inline function onlblCustomScaleControl(component, value)
+{
+	local temp = lblCustomScale.get("text"); 
+
+	local array = temp.split(",");
+	local scale = [];
+	for(i = 0; i<array.length; ++i){
+		scale[i] = parseInt(array[i]);
+	}
+	//lblCustomScale.set("text",temp);
+
+	if(lblCustomScale.getValue()){
+		Notes.setScale(scale);
+	}
+};
+lblCustomScale.setControlCallback(onlblCustomScaleControl);
+
+
 Notes.setNotes(48);
 
 
@@ -318,8 +406,8 @@ function onNoteOn()
 	if(jtick==0 && stepEnabled && scanPosion!=16){
 		Synth.stopTimer();
 		scanPosion = 16;
-		startButton.setValue(false);
-		startButton.set("text","Start");
+		btnStart.setValue(false);
+		btnStart.set("text","Start");
 		// dont't play new notes, but end old ones
 		playNotes = false;
 	}else{

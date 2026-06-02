@@ -21,7 +21,7 @@ namespace SideButtons
 {
 	inline function onbtnLoadControl(component, value)
 	{
-	Console.print("LoadControl");
+	//Console.print("LoadControl");
 
 		if(value==0)
 			return;

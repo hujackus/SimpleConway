@@ -162,15 +162,11 @@ namespace MainSettings
 	Content.getComponent("btnCommandShow").setLocalLookAndFeel(iconButton);
 }
 
-
-
-
-
 reg timeTick = 0;
 reg scanPosion = 0; 
+reg pressedStopAndWaiting = false;
 reg updateEvery = 16;
 reg stepEnabled = false;
-
 
 namespace Grid
 {
@@ -263,11 +259,19 @@ inline function onbtnStartControl(component, value)
 		}else{
 			
 		}
+		if(pressedStopAndWaiting){
+			pressedStopAndWaiting = false;
+		}
 		Synth.startTimer(7.5/Content.getComponent("BPMKnob").getValue());
 		component.set("text","Stop");	
 	}else{
-		Synth.stopTimer();
-		component.set("text","Start");	
+		if(pressedStopAndWaiting){
+			
+		}else{
+			pressedStopAndWaiting = true;
+			//Synth.stopTimer();
+			//component.set("text","Start");
+		}	
 	}	
 };
 const btnStart = Content.getComponent("btnStart");
@@ -304,6 +308,7 @@ inline function onlblUpdateEveryControl(component, value)
 };
 const lblUpdateEvery = Content.getComponent("lblUpdateEvery");
 lblUpdateEvery.setControlCallback(onlblUpdateEveryControl);
+lblUpdateEvery.set("text",16);
 
 const VelSlider = Content.getComponent("VelSlider");
 const PanSlider = Content.getComponent("PanSlider");
@@ -409,6 +414,10 @@ function onNoteOn()
 		btnStart.setValue(false);
 		btnStart.set("text","Start");
 		// dont't play new notes, but end old ones
+		playNotes = false;
+	}else if(pressedStopAndWaiting){
+		Synth.stopTimer();
+		btnStart.set("text","Start");
 		playNotes = false;
 	}else{
 		scanPosion = jtick;
@@ -535,7 +544,15 @@ function onNoteOn()
 				Synth.noteOffByEventId(Output.noteID[15-i]);
 				Output.noteID[15-i] = -1;
 			}
+		}else if(pressedStopAndWaiting){
+			//Console.print("NoteOff:"+ notes[15-i]);
+			Synth.noteOffByEventId(Output.noteID[15-i]);
+			Output.noteID[15-i] = -1;
 		}
+	}
+	
+	if(pressedStopAndWaiting){
+		pressedStopAndWaiting = false;
 	}
 	
 	if(!playNotes){
@@ -543,7 +560,6 @@ function onNoteOn()
 	}else{
 		timeTick++;	
 	}
-	
 	
 	Grid.pnlCells.changed();
 	Grid.pnlCells.repaint();
